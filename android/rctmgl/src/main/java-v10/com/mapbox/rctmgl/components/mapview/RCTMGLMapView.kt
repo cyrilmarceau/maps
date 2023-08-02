@@ -1,5 +1,6 @@
 package com.mapbox.rctmgl.components.mapview
 
+import android.graphics.Color
 import android.content.Context
 import android.graphics.BitmapFactory
 import android.graphics.PointF
@@ -61,6 +62,7 @@ import com.mapbox.rctmgl.components.mapview.helpers.CameraChangeReason
 import com.mapbox.rctmgl.components.mapview.helpers.CameraChangeTracker
 import com.mapbox.rctmgl.components.styles.layers.RCTLayer
 import com.mapbox.rctmgl.components.styles.light.RCTMGLLight
+import com.mapbox.rctmgl.components.styles.sources.RCTMGLImageSource
 import com.mapbox.rctmgl.components.styles.sources.RCTSource
 import com.mapbox.rctmgl.components.styles.terrain.RCTMGLTerrain
 import com.mapbox.rctmgl.events.AndroidCallbackEvent
@@ -1235,6 +1237,7 @@ open class RCTMGLMapView(private val mContext: Context, var mManager: RCTMGLMapV
     }
 
     var mScaleBarSettings = OrnamentSettings(enabled = false)
+    var mScaleBarStyle = null
 
     fun setReactScaleBarEnabled(scaleBarEnabled: Boolean) {
         mScaleBarSettings.enabled = scaleBarEnabled
@@ -1256,9 +1259,22 @@ open class RCTMGLMapView(private val mContext: Context, var mManager: RCTMGLMapV
         updateScaleBar()
     }
 
+    fun setReactScaleBarTextBorder(color: Color) {
+
+    }
+
     private fun updateScaleBar() {
+
+        // TODO: Implement scale bar style
+        // TODO: Add props to manager
+        // TODO: Create props type in lib
+        // TODO: Add props inside ScaleBarView scene
+        val mapboxBlueColor = Color.parseColor("#4A90E2")
+
+
         mapView.scalebar.updateSettings {
             updateOrnament("scaleBar", mScaleBarSettings, this.toGenericOrnamentSettings())
+            showTextBorder = false
         }
         workaroundToRelayoutChildOfMapView()
     }

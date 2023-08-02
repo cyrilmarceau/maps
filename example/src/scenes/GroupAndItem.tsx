@@ -87,6 +87,8 @@ import Markers from '../examples/V10/Markers';
 import QueryTerrainElevation from '../examples/V10/QueryTerrainElevation';
 import TerrainSkyAtmosphere from '../examples/V10/TerrainSkyAtmosphere';
 
+// SCALEBAR
+import ScaleBarView from '../examples/ScaleBarSettings/ScaleBarView';
 const MostRecentExampleKey = '@recent_example';
 
 const styles = StyleSheet.create({
@@ -267,6 +269,7 @@ const Examples = new ExampleGroup('React Native Mapbox', [
     new ExampleItem('Map Handlers', MapHandlers),
   ]),
   new ExampleGroup('Map', [
+    new ExampleItem('Scale bar settings', ScaleBarView),
     new ExampleItem('Show Map', ShowMap),
     new ExampleItem('Show Map With Local Style.JSON', ShowMapLocalStyle),
     new ExampleItem('Show Click', ShowClick),
